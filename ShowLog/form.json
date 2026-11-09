@@ -1,0 +1,25 @@
+{
+  "elements": [
+    {
+      "type": "NumberSpinner",
+      "name": "ReadInterval",
+      "caption": "Leseintervall (Sekunden)",
+      "minimum": 5,
+      "maximum": 3600,
+      "default": 60
+    },
+    {
+      "type": "NumberSpinner",
+      "name": "Hours",
+      "caption": "Zeitraum (Stunden)",
+      "minimum": 1,
+      "maximum": 720,
+      "default": 24
+    },
+    {
+      "type": "Label",
+      "caption": "Fehlermeldungen stehen in der Variable „Fehler im Log“ als JSON zur Verfügung. Das Objekt enthält generatedAt, periodHours, count und errors mit timestamp, senderId, sender und message. Die Anzahl steht zusätzlich in der Integer-Variable „Anzahl der Fehlereinträge“. Es wird ausschließlich die aktuell neueste Symcon-Logdatei durchsucht."
+    }
+  ],
+  "actions": []
+}
