@@ -1,0 +1,13 @@
+{
+  "id": "{A2D7B4C9-1F63-4E80-9A25-6C3B8D0E5174}",
+  "name": "ShowLog",
+  "type": 3,
+  "vendor": "Custom",
+  "aliases": ["ShowLog", "Fehler im Symcon-Log"],
+  "parentRequirements": [],
+  "childRequirements": [],
+  "implemented": [],
+  "prefix": "SHL",
+  "version": "1.0",
+  "build": 1
+}
