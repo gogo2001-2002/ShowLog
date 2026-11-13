@@ -26,6 +26,7 @@ Die Instanz liest die Logdatei beim Anwenden der Konfiguration und anschließend
 | --- | --- | --- |
 | Fehler im Log | String | JSON-Objekt mit Metadaten und Fehlerliste |
 | Anzahl der Fehlereinträge | Integer | Anzahl der in der JSON-Ausgabe enthaltenen Einträge |
+| Fehler-Alarm | Boolean | `true`, wenn mindestens ein Fehler im konfigurierten Zeitraum gefunden wurde; sonst `false` |
 
 Die JSON-Ausgabe ist nicht als HTML formatiert. Die Stringvariable verwendet eine Textpräsentation, damit sie in einer Visualisierung weiterverarbeitet und dort nach Bedarf gestaltet werden kann.
 
