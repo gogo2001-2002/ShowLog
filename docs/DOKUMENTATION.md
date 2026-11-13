@@ -2,7 +2,7 @@
 
 ## Zweck
 
-ShowLog liest die jeweils neueste IP-Symcon-Systemlogdatei und stellt die darin gefundenen Fehlereinträge als JSON-String für die Weiterverarbeitung in einer Visualisierung bereit. Zusätzlich hält das Modul die Anzahl dieser Einträge in einer Integer-Variable.
+ShowLog liest die jeweils neueste IP-Symcon-Systemlogdatei und stellt die darin gefundenen Fehlereinträge als JSON-String für die Weiterverarbeitung in einer Visualisierung bereit. Zusätzlich hält das Modul die Anzahl dieser Einträge in einer Integer-Variable. Eine Boolean-Variable zeigt dauerhaft an, ob im konfigurierten Zeitraum mindestens ein Fehler vorhanden ist.
 
 Das Modul erzeugt kein HTML-Markup für die Fehlerausgabe. Die WebVisu kann das JSON selbst einlesen und die Darstellung frei gestalten.
 
@@ -30,8 +30,9 @@ Die PHP-Implementierung begrenzt Werte zusätzlich auf die angegebenen Bereiche.
 | --- | --- | --- | ---: | --- |
 | `Errors` | Fehler im Log | String | 1 | JSON-Objekt |
 | `ErrorCount` | Anzahl der Fehlereinträge | Integer | 2 | Anzahl der Einträge in `errors` |
+| `Alarm` | Fehler-Alarm | Boolean | 3 | `true`, wenn `ErrorCount` größer als 0 ist |
 
-Die JSON-Variable ist mit einer Textpräsentation (mehrzeilig) versehen. Sie wird dadurch nicht als HTML interpretiert. Der Wert enthält lesbare Einrückungen, bleibt aber gültiges JSON.
+Die JSON-Variable ist mit einer Textpräsentation (mehrzeilig) versehen. Sie wird dadurch nicht als HTML interpretiert. Der Wert enthält lesbare Einrückungen, bleibt aber gültiges JSON. Die Boolean-Variable wird bei jedem Logabruf direkt aus derselben Fehlerliste aktualisiert. Sie ist kein zeitlich begrenzter Impuls: Sie bleibt `true`, solange mindestens ein Fehler im eingestellten Rückblickszeitraum vorhanden ist, und wird bei leerer Fehlerliste auf `false` gesetzt.
 
 ## Datenformat
 
