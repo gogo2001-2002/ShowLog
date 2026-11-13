@@ -22,6 +22,7 @@ class ShowLog extends IPSModule
         $interval = max(5, min(3600, $this->ReadPropertyInteger('ReadInterval')));
         $this->SetTimerInterval('ReadLog', $interval * 1000);
         $this->MaintainVariable('ErrorCount', 'Anzahl der Fehlereinträge', VARIABLETYPE_INTEGER, '', 2, true);
+        $this->MaintainVariable('Alarm', 'Fehler-Alarm', VARIABLETYPE_BOOLEAN, '~Alert', 3, true);
         $this->SetJSONPresentation();
         $this->ReadLog();
     }
@@ -69,6 +70,7 @@ class ShowLog extends IPSModule
             }, $entries)
         ];
         $this->SetValue('ErrorCount', count($entries));
+        $this->SetValue('Alarm', count($entries) > 0);
         $json = json_encode(
             $output,
             JSON_PRETTY_PRINT | JSON_UNESCAPED_UNICODE | JSON_UNESCAPED_SLASHES | JSON_INVALID_UTF8_SUBSTITUTE
